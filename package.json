@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
-    "build": "nx build",
+    "deploy": "yarn build && yarn copy",
+    "build": " nx build host",
+    "copy": "rm -rf prod && mv dist/apps/host prod && cp -r dist/apps/* prod && rm -rf dist",
     "test": "nx test"
   },
   "private": true,
